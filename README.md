@@ -164,10 +164,14 @@ python test_PIE.py --config_file ./configs/pie.yaml
 If you find this repository useful for your research, please consider giving a star ⭐ and a citation
 
 ```
-@inproceedings{,
-    title={},
-    author={},
-    booktitle={},
-    year={}
+@article{
+teeti2025astra,
+title={{ASTRA}: A Scene-aware Transformer-based Model for Trajectory Prediction},
+author={Izzeddin Teeti and Aniket Thomas and Munish Monga and Sachin Kumar Giroh and Uddeshya Singh and Andrew Bradley and Biplab Banerjee and Fabio Cuzzolin},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2025},
+url={https://openreview.net/forum?id=fqSVqPcaVi},
+note={}
 }
 ```
