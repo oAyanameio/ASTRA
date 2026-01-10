@@ -1,5 +1,5 @@
 # ASTRA: A Scene-aware TRAnsformer-based model for trajectory prediction
-This is the official PyTorch implmentation of the paper **ASTRA: A Scene-aware TRAnsformer-based model for trajectory prediction**.
+This is the official PyTorch implementation of the paper **[ASTRA: A Scene-aware Transformer-based Model for Trajectory Prediction](https://jmlr.org/tmlr/papers/#:~:text=ASTRA%3A%20A%20Scene%2Daware%20Transformer%2Dbased%20Model%20for%20Trajectory%20Prediction)**.
 
 ## Model Architecture 🏗️
 
