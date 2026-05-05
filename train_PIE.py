@@ -206,9 +206,9 @@ def train_one_epoch(cfg, epoch, train_loader, model, embedding_extractor, optimi
         else:
             unet_features = None
                
-        past_loc = cxcy_to_xy(past_loc, cfg, gpu_num, unnormalize=False)           
-        # prediction using model
-        pred_traj = model(past_loc, unet_features)
+        past_loc = cxcy_to_xy(past_loc, cfg, gpu_num, unnormalize=False)
+        fut_loc_transformed = cxcy_to_xy(fut_loc.clone(), cfg, gpu_num)
+        mean, log_var, pred_traj, _, _, _ = model(past_loc, fut_loc_transformed, unet_features)
        
         
         # ic(pred_traj)
@@ -278,9 +278,9 @@ def val_one_epoch(cfg, epoch, val_loader, model, embedding_extractor, loss_fun, 
             else:
                 unet_features = None
             past_loc = cxcy_to_xy(past_loc, cfg, gpu_num, unnormalize=False)
-            # prediction using model
-            pred_traj = model(past_loc, unet_features)
-                
+            fut_loc_transformed = cxcy_to_xy(fut_loc.clone(), cfg, gpu_num)
+            mean, log_var, pred_traj, _, _, _ = model(past_loc, fut_loc_transformed, unet_features)
+
             # loss calculation
             pred_traj = unnormalize_coords(pred_traj, cfg, gpu_num)
             fut_loc = cxcy_to_xy(fut_loc, cfg, gpu_num)

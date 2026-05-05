@@ -83,14 +83,9 @@ def model_summary(model, cfg):
     params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     params = clever_format(params, "%.3f")
     logger.info(f"params: {params}")
-    
-    if cfg.DATASET == 'ETH_UCY':
-        if cfg.SUBSET == 'univ':
-            num_pedestrians = 2
-        elif cfg.SUBSET == 'zara01':
-            num_pedestrians = 3
-        else:
-            num_pedestrians = 1
+
+    logger.info(f"FLOPs and MACs calculation skipped for PIE dataset")
+    return
             
     dummy_input = (
         torch.randn(1, num_pedestrians, 8, 2, device=cfg.device),     # past loc

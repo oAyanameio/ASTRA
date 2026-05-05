@@ -12,7 +12,7 @@ PREDICTION:
   TRAJ_SCALE: 1
 
 TRAIN:
-  DEVICE: 0  # 0,1,2,3,4,5,6,7
+  DEVICE: 1  # 0,1,2,3,4,5,6,7
   BATCH_SIZE: 16
   NUM_WORKERS: 8
   NUM_EPOCH: 250
@@ -43,7 +43,7 @@ DATA:
   MAX_BBOX: [1920, 1080, 1920, 1080] 
 
 MODEL:
-  USE_PRETRAINED_UNET: False
+  USE_PRETRAINED_UNET: True
   USE_SOCIAL: False
   USE_VAE: False  # Set True for stochastic predictions, False for deterministic predictions
   SPATIAL_DIM: 32
